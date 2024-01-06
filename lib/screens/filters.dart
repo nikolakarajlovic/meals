@@ -41,7 +41,8 @@ class _FiltersScreenState extends State<FiltersScreen> {
       //     }
       //   },
       // ),
-      body: WillPopScope(
+      body:
+      WillPopScope(
         onWillPop: () async {
           Navigator.of(context).pop({
             Filter.glutenFree: _glutenFreeFilterSet,
