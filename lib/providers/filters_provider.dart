@@ -56,6 +56,5 @@ final filteredMealsProvider = Provider((ref) {
   })
       .
   toList
-    (
-  );
-};);
+    ( );
+});
