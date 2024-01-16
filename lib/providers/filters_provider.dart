@@ -11,11 +11,11 @@ enum Filter {
 class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
   FiltersNotifier()
       : super({
-    Filter.glutenFree: false,
-    Filter.lactoseFree: false,
-    Filter.vegetarian: false,
-    Filter.vegan: false,
-  });
+          Filter.glutenFree: false,
+          Filter.lactoseFree: false,
+          Filter.vegetarian: false,
+          Filter.vegan: false,
+        });
 
   void setFilters(Map<Filter, bool> chosenFilters) {
     state = chosenFilters;
@@ -31,8 +31,8 @@ class FiltersNotifier extends StateNotifier<Map<Filter, bool>> {
 }
 
 final filtersProvider =
-StateNotifierProvider<FiltersNotifier, Map<Filter, bool>>(
-      (ref) => FiltersNotifier(),
+    StateNotifierProvider<FiltersNotifier, Map<Filter, bool>>(
+  (ref) => FiltersNotifier(),
 );
 
 final filteredMealsProvider = Provider((ref) {
@@ -53,8 +53,5 @@ final filteredMealsProvider = Provider((ref) {
       return false;
     }
     return true;
-  })
-      .
-  toList
-    ( );
+  }).toList();
 });
