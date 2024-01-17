@@ -37,11 +37,12 @@ class MealDetailsScreen extends ConsumerWidget {
             duration: const Duration(milliseconds: 300),
             transitionBuilder: (child, animation) {
               return RotationTransition(
-                turns: animation,
+                turns: Tween<double>(begin: 0.8, end: 1).animate(animation),
                 child: child,
               );
             },
-            child: Icon(isFavorite ? Icons.star : Icons.star_border),
+            child: Icon(isFavorite ? Icons.star : Icons.star_border,
+                key: ValueKey(isFavorite)),
           ),
         ),
       ]),
@@ -58,7 +59,7 @@ class MealDetailsScreen extends ConsumerWidget {
               height: 14,
             ),
             Text(
-              'Ingridients',
+              'Ingredients',
               style: Theme.of(context).textTheme.titleLarge!.copyWith(
                     color: Theme.of(context).colorScheme.primary,
                     fontWeight: FontWeight.bold,
